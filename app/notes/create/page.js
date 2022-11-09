@@ -1,10 +1,11 @@
 'use client'
 
-import PocketBase from 'pocketbase'
 import { useState } from 'react'
-import InputText from '../../../components/InputText'
-import Textarea from '../../../components/Textarea'
 import { useRouter } from 'next/navigation'
+import PocketBase from 'pocketbase'
+import InputText from '../../../components/ui/InputText'
+import Textarea from '../../../components/ui/Textarea'
+import Button from '../../../components/ui/Button'
 
 export default function Create() {
   const [title, setTitle] = useState()
@@ -24,11 +25,11 @@ export default function Create() {
 
   return (
     <div className='flex flex-col items-center w-full'>
-      <p className='text-2xl'>Create Note</p>
+      <h1 className='text-2xl'>Create Note</h1>
       <form onSubmit={createNote} className='flex flex-col my-8 gap-2 w-full md:w-1/2'>
         <InputText onChange={setTitle} required={true} />
         <Textarea onChange={setText} rows={10} required={true} />
-        <button type='submit' className='button'>Save</button>
+        <Button type='submit' label='Save Me' />
       </form>
     </div>
   )

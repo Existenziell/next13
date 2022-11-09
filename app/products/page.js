@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import Button from "../../components/ui/Button"
 
 async function getProducts() {
   const result = await fetch(`https://dummyjson.com/products`, { cache: 'no-store' })
@@ -12,22 +13,24 @@ export default async function Products() {
 
   return (
     <div>
-      <div className='flex flex-wrap gap-8 pb-24'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start justify-evenly gap-8 pb-24'>
         {products?.map(prod => (
           <Link key={prod.title} href={`/products/${prod.id}`}>
             <div className='product hover:shadow-sm'>
-              <h2 className="text-xl mb-2 max-w-[200px] truncate">{prod.title}</h2>
-              <p className="max-w-[200px] truncate">{prod.description}</p>
-              <div className="nextimg h-20 my-4">
+              <h2 className="text-xl mb-2 truncate">{prod.title}</h2>
+              <p className="truncate">{prod.description}</p>
+              <div className="my-4 h-44 overflow-hidden">
                 <Image
                   src={prod.thumbnail}
-                  layout='fill'
+                  width={200}
+                  height={100}
                   alt={prod.title}
-                  objectFit='cover'
-                  className="rounded-sm"
+                  style={{ width: 'auto', height: 'auto' }}
+                  className='shadow rounded-sm'
+                  priority={true}
                 />
               </div>
-              <p>USD {prod.price},-</p>
+              <p className="text-sm">USD {prod.price},-</p>
             </div>
           </Link>
         ))}

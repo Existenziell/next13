@@ -1,20 +1,23 @@
-import Link from 'next/link'
-import { Suspense } from 'react'
-import DarkModeToggle from '../components/darkmodeToggle'
-import Navigation from '../components/navigation'
 import './globals.css'
+import Link from 'next/link'
 import Loading from './loading'
+import Navigation from '../components/Navigation'
+import DarkModeToggle from '../components/DarkmodeToggle'
+import { Suspense } from 'react' // Needed for loading state
+import { Quicksand } from '@next/font/google'
+const font = Quicksand()
 
 export default function RootLayout({ children }) {
+
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       <head>
-        <title>Notes</title>
-        <meta name="description" content="Save and Edit your notes" />
+        <title>NextJS 13 Playground</title>
+        <meta name="description" content="NextJS 13 Playground" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <header className='h-20 bg-slate-300 dark:bg-slate-900 flex justify-between items-center px-4 md:px-8'>
+        <header className='h-20 bg-brand dark:bg-brand-dark flex justify-between items-center px-4 md:px-8'>
           <Navigation />
           <DarkModeToggle />
         </header>
@@ -23,7 +26,7 @@ export default function RootLayout({ children }) {
             {children}
           </Suspense>
         </main>
-        <footer className='h-8 fixed bottom-0 w-full bg-slate-300 dark:bg-slate-900 text-xs flex items-center justify-center'>
+        <footer className='h-8 fixed bottom-0 w-full bg-brand dark:bg-brand-dark text-xs flex items-center justify-center'>
           Footer
         </footer>
       </body>

@@ -1,11 +1,12 @@
 'use client'
 
-import { use, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import PocketBase from 'pocketbase'
-import InputText from './InputText'
-import Textarea from './Textarea'
-import { XMarkIcon } from "@heroicons/react/24/outline"
+import InputText from './ui/InputText'
+import Textarea from './ui/Textarea'
+import Button from './ui/Button'
 
 export default function EditNoteForm({ note }) {
   const [showEdit, setShowEdit] = useState(false)
@@ -16,13 +17,13 @@ export default function EditNoteForm({ note }) {
   async function updateNote(id) {
     const db = new PocketBase('http://127.0.0.1:8090')
     const data = { title, text }
-    await db.records.update('notes', id, data);
+    await db.records.update('notes', id, data)
     router.refresh()
   }
 
   async function deleteNote(id) {
     const db = new PocketBase('http://127.0.0.1:8090')
-    await db.records.delete('notes', id);
+    await db.records.delete('notes', id)
     router.refresh()
     router.push('/notes')
   }
@@ -33,7 +34,7 @@ export default function EditNoteForm({ note }) {
         <form onSubmit={() => updateNote(note.id)} className='flex flex-col gap-2 w-full'>
           <InputText onChange={setTitle} required={true} defaultValue={note.title} />
           <Textarea onChange={setText} rows={10} required={true} defaultValue={note.text} />
-          <button type='submit' className='button'>Update</button>
+          <Button label='Save' disabled={!showEdit} />
         </form>
         :
         <div className='relative'>

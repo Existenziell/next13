@@ -6,7 +6,18 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      // fontFamily: {
+      //   sans: ['Atlas-Typewriter' ],
+      // },
+      colors: {
+        'brand': 'var(--color-brand)',
+        'brand-dark': 'var(--color-brand-dark)',
+        'cta': 'var(--color-cta)',
+        'detail': 'var(--color-detail)',
+        'detail-dark': 'var(--color-detail-dark)',
+      },
+    },
   },
   plugins: [],
 }

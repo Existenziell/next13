@@ -4,7 +4,7 @@ import Link from "next/link"
 const BackBtn = ({ href }) => (
   <Link
     href={href}
-    className="bg-slate-300 dark:bg-slate-900 shadow hover:shadow-none transition-all p-1 rounded-sm block"
+    className="bg-brand dark:bg-brand-dark shadow hover:shadow-none hover:text-cta transition-all p-1 rounded-sm block"
   >
     <ChevronLeftIcon className='w-6' />
   </Link>

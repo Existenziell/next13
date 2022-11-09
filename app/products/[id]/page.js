@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BackBtn from '../../../components/backButton';
+import BackBtn from '../../../components/BackButton';
 
 async function getProduct(prodId) {
   const res = await fetch(`https://dummyjson.com/products/${prodId}`)
@@ -17,18 +17,18 @@ export default async function Product({ params }) {
       <div className='product'>
         <h2 className="text-xl mb-2 ">{product.title}</h2>
         <p className="">{product.description}</p>
-        <div className="nextimg my-4">
+        <div className="my-4">
           <Image
             src={product.thumbnail}
-            layout='responsive'
-            width={100}
+            width={200}
             height={100}
             alt={product.title}
-            objectFit='contain'
-            className="rounded-sm"
+            style={{ width: 'auto', height: 'auto' }}
+            className='shadow rounded-sm'
+            priority={true}
           />
         </div>
-        <p>USD {product.price},-</p>
+        <p className='text-sm'>USD {product.price},-</p>
       </div>
     </div>
   )

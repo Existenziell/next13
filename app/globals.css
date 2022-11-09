@@ -2,39 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-brand: rgb(203 213 225);
+  --color-brand-dark: rgb(15 23 42);
+  --color-cta: rgb(253 224 71);
+  --color-detail: rgb(248 250 252);
+  --color-detail-dark: rgb(30 41 59);
+}
+
 body {
-  @apply bg-slate-50 text-slate-900 dark:bg-slate-800 dark:text-slate-100;
-}
-
-input[type='text']:not(:disabled) {
-  @apply p-2 text-sm border-2 rounded-sm text-black 
-  dark:text-white dark:bg-slate-900 dark:border-slate-900 dark:focus:border-black 
-  focus:outline-none focus:ring-0 focus:border-slate-800;
-}
-
-textarea:not(:disabled) {
-  @apply p-2 text-sm border-2 rounded-sm text-black
-  dark:text-white dark:bg-slate-900 dark:border-slate-900 dark:focus:border-black
-  focus:outline-none focus:ring-0 focus:border-slate-800;
-}
-
-.button {
-  @apply py-2 px-4 bg-slate-300 transition-all hover:text-white rounded-sm shadow hover:shadow-none
-    dark:bg-slate-900 dark:text-slate-300;
+  @apply bg-detail text-brand-dark dark:bg-detail-dark dark:text-brand;
 }
 
 .note {
-  @apply bg-yellow-300 py-6 px-8 shadow-lg rounded-sm transition-all max-w-max text-black;
+  @apply bg-cta py-6 px-8 shadow-lg rounded-sm transition-all max-w-max text-black;
 }
 
-.product {
-  @apply bg-stone-200 p-4 shadow-lg rounded-sm transition-all 
-    max-w-[440px] text-black justify-between flex flex-col;
+.product, .nft {
+  @apply bg-brand dark:bg-brand-dark px-8 py-4 shadow-lg rounded transition-all 
+    max-w-[440px] justify-between flex flex-col;
 }
 
-.nextimg {
-  font-size: 0;
-  letter-spacing: 0;
-  word-spacing: 0;
-  position: relative;
+.link-nav {
+  @apply hover:text-black hover:scale-105 dark:hover:text-cta transition-all;
 }
