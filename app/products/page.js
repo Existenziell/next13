@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import Header from "../../components/Header"
 import Button from "../../components/ui/Button"
 
 async function getProducts() {
@@ -13,6 +14,7 @@ export default async function Products() {
 
   return (
     <div>
+      <Header link='https://dummyjson.com/' text='DummyJSON-API' />
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start justify-evenly gap-8 pb-24'>
         {products?.map(prod => (
           <Link key={prod.title} href={`/products/${prod.id}`}>

@@ -1,6 +1,6 @@
 'use client'
 
-export default function InputText({ onChange, required, defaultValue }) {
+export default function InputText({ onChange, required, defaultValue, placeholder }) {
   return (
     <input
       type='text'
@@ -11,6 +11,7 @@ export default function InputText({ onChange, required, defaultValue }) {
       autoCorrect='off'
       spellCheck='false'
       autoCapitalize='false'
+      placeholder={placeholder}
       className='p-2 text-sm border-2 border-transparent rounded-sm text-black bg-brand
         dark:text-white dark:bg-brand-dark dark:border-brand-dark dark:focus:border-brand
         focus:outline-none focus:ring-0 focus:border-brand-dark'
