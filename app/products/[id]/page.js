@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BackBtn from '../../../components/BackButton';
+import BackButtonn from '../../../components/BackButton';
 
 async function getProduct(prodId) {
   const res = await fetch(`https://dummyjson.com/products/${prodId}`)
@@ -12,7 +12,7 @@ export default async function Product({ params }) {
   return (
     <div className='flex items-center justify-center relative'>
       <div className='absolute top-0 left-0'>
-        <BackBtn href='/products' />
+        <BackButtonn href='/products' />
       </div>
       <div className='product'>
         <h2 className="text-xl mb-2 ">{product.title}</h2>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Navigation() {
+export default function Navigationn() {
   return (
     <nav className='flex items-center justify-center gap-6'>
       <Link href='/' className='link-nav'>Home</Link>

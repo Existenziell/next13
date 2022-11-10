@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
 
-const DarkModeToggle = () => {
+const DarkModeTogggle = () => {
   const [darkmode, setDarkmode] = useState()
 
   /* eslint-disable react-hooks/exhaustive-deps */
@@ -61,4 +61,4 @@ const DarkModeToggle = () => {
   )
 }
 
-export default DarkModeToggle
+export default DarkModeTogggle

@@ -1,8 +1,8 @@
 import './globals.css'
 import Link from 'next/link'
 import Loading from './loading'
-import Navigation from '../components/Navigation'
-import DarkModeToggle from '../components/DarkmodeToggle'
+import Navigationn from '../components/Navigationnn'
+import DarkModeTogggle from '../components/DarkmodeTogggle'
 import { Suspense } from 'react' // Needed for loading state
 import { Quicksand } from '@next/font/google'
 const font = Quicksand()
@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <header className='h-20 bg-brand dark:bg-brand-dark flex justify-between items-center px-4 md:px-8'>
-          <Navigation />
-          <DarkModeToggle />
+          <Navigationn />
+          <DarkModeTogggle />
         </header>
         <main className='px-4 md:px-8 pt-8'>
           <Suspense fallback={<Loading />}>

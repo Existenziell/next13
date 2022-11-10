@@ -1,4 +1,4 @@
-import BackBtn from '../../../components/backButton';
+import BackButtonn from '../../../components/BackButtonn';
 import EditNoteForm from '../../../components/EditNoteForm';
 import clientPromise from '../../../utils/mongodb';
 import { ObjectId } from 'mongodb'
@@ -18,7 +18,7 @@ export default async function Mongo({ params }) {
   return (
     <div className='flex items-center justify-center relative'>
       <div className='absolute top-0 left-0'>
-        <BackBtn href='/notes' />
+        <BackButtonn href='/notes' />
       </div>
       <div className='note'>
         <EditNoteForm note={note} />

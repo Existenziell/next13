@@ -1,5 +1,5 @@
 import { supabase } from '../../../utils/supabase'
-import BackBtn from '../../../components/BackButton';
+import BackButtonn from '../../../components/BackButton';
 import Image from 'next/image';
 
 async function fetchNft(nftId) {
@@ -17,7 +17,7 @@ export default async function Nft({ params }) {
   return (
     <div className='flex items-center justify-center relative'>
       <div className='absolute top-0 left-0'>
-        <BackBtn href='/nfts' />
+        <BackButtonn href='/nfts' />
       </div>
       <div className='nft'>
         <h2 className='text-2xl mb-2'>{nft.name}</h2>
